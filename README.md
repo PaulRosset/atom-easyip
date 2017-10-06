@@ -9,6 +9,8 @@ Plugin based on easy-ip package to get information about your public/private IP 
 
 ![](https://github.com/PaulRosset/atom-easyip/blob/master/easy-ip.gif)
 
+[View the demonstration on Github](https://github.com/PaulRosset/atom-easyip)
+
 ## License
 
 MIT License
