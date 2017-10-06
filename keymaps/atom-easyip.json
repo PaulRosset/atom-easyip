@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-)": "atom-easyip:launch"
+    "alt-cmd-;": "atom-easyip:launch"
   }
 }
