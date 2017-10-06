@@ -17,12 +17,12 @@ describe('AtomEasyip', () => {
 
   describe('when the atom-easyip:launch event is triggered', () => {
     it('Show a new workspace with text', () => {
-      // Before the activation event the view is not on the DOM, and no panel
-      // has been created
-      expect(workspaceElement.querySelector('.atom-easyip')).not.toExist();
 
-      // This is an activation event, triggering it will cause the package to be
-      // activated.
+      atom.workspace.onDidOpen((event) => {
+        expect(event).toNotExist()
+        expect(event.item).toNotExist()
+      })
+
       atom.commands.dispatch(workspaceElement, 'atom-easyip:launch');
 
       waitsForPromise(() => {
