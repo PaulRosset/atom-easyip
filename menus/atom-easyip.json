@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Launch atom-easyip",
+        "command": "atom-easyip:launch"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "atom-easyip",
+          "submenu": [
+            {
+              "label": "Launch",
+              "command": "atom-easyip:launch"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

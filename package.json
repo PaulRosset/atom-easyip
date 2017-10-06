@@ -1,0 +1,20 @@
+{
+  "name": "atom-easyip",
+  "main": "./lib/atom-easyip",
+  "version": "0.0.1",
+  "description": "Plugin based on easy-ip package to get information about your public/private IP with few features in more.",
+  "keywords": ["atom", "easyip", "plugin", "packages", "network"],
+  "activationCommands": {
+    "atom-workspace": "atom-easyip:launch"
+  },
+  "repository": "https://github.com/atom/atom-easyip",
+  "author": "Paul Rosset <paulrosset96@gmail.com> (http://paulrossethings.com/)",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "easy-ip": "^1.2.0",
+    "lodash": "^4.17.4"
+  }
+}
