@@ -1,7 +1,7 @@
 {
   "name": "atom-easyip",
   "main": "./lib/atom-easyip",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Plugin based on easy-ip package to get information about your public/private IP with few features in more.",
   "keywords": [
     "atom",
