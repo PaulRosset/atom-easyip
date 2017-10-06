@@ -15,58 +15,26 @@ describe('AtomEasyip', () => {
     activationPromise = atom.packages.activatePackage('atom-easyip');
   });
 
-  describe('when the atom-easyip:toggle event is triggered', () => {
-    it('hides and shows the modal panel', () => {
+  describe('when the atom-easyip:launch event is triggered', () => {
+    it('Show a new workspace with text', () => {
       // Before the activation event the view is not on the DOM, and no panel
       // has been created
       expect(workspaceElement.querySelector('.atom-easyip')).not.toExist();
 
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'atom-easyip:toggle');
+      atom.commands.dispatch(workspaceElement, 'atom-easyip:launch');
 
       waitsForPromise(() => {
         return activationPromise;
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.atom-easyip')).toExist();
+        atom.workspace.onDidOpen((event) => {
+          expect(event).toExist()
+          expect(event.item).toExist()
+        })
 
-        let atomEasyipElement = workspaceElement.querySelector('.atom-easyip');
-        expect(atomEasyipElement).toExist();
-
-        let atomEasyipPanel = atom.workspace.panelForItem(atomEasyipElement);
-        expect(atomEasyipPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'atom-easyip:toggle');
-        expect(atomEasyipPanel.isVisible()).toBe(false);
-      });
-    });
-
-    it('hides and shows the view', () => {
-      // This test shows you an integration test testing at the view level.
-
-      // Attaching the workspaceElement to the DOM is required to allow the
-      // `toBeVisible()` matchers to work. Anything testing visibility or focus
-      // requires that the workspaceElement is on the DOM. Tests that attach the
-      // workspaceElement to the DOM are generally slower than those off DOM.
-      jasmine.attachToDOM(workspaceElement);
-
-      expect(workspaceElement.querySelector('.atom-easyip')).not.toExist();
-
-      // This is an activation event, triggering it causes the package to be
-      // activated.
-      atom.commands.dispatch(workspaceElement, 'atom-easyip:toggle');
-
-      waitsForPromise(() => {
-        return activationPromise;
-      });
-
-      runs(() => {
-        // Now we can test for view visibility
-        let atomEasyipElement = workspaceElement.querySelector('.atom-easyip');
-        expect(atomEasyipElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'atom-easyip:toggle');
-        expect(atomEasyipElement).not.toBeVisible();
       });
     });
   });
