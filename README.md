@@ -1,5 +1,14 @@
-# atom-easyip package
+# atom-easyip
 
-A short description of your package.
+Plugin based on easy-ip and Atom package to get information about your public/private IP with few features in more.
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+[Atom package](https://atom.io/packages/atom-easyip)
+
+
+# Functionality
+
+
+
+## License
+
+MIT License
